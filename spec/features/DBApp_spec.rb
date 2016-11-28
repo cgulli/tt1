@@ -1,8 +1,8 @@
 require "spec_helper"
 
-feature 'Server launches with Sinatra' do
-  scenario 'and runs on localhost 4000' do
+feature 'Server' do
+  scenario 'launches with Sinatra' do
     visit "/"
-    expect(url).to eq "http://localhost:4000/"
+    expect(page.status_code).to eq 200
   end
 end
