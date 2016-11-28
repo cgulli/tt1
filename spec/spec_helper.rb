@@ -52,6 +52,14 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+Capybara.server_port = 4000
+
+# To ensure that browser tests can find the test server process,
+# always include the port number in URLs.
+Capybara.always_include_port = true
+
+Capybara.app_host = "http://localhost:4000"
+
 # The settings below are suggested to provide a good initial experience
 # with RSpec, but feel free to customize to your heart's content.
 =begin
